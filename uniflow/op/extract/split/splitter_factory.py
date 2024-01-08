@@ -4,9 +4,11 @@ from typing import Dict, List
 from uniflow.op.extract.split.constants import (
     MARKDOWN_HEADER_SPLITTER,
     PARAGRAPH_SPLITTER,
+    SEMANTIC_LLM_SPLITTER
 )
 from uniflow.op.extract.split.markdown_header_splitter import MarkdownHeaderSplitter
 from uniflow.op.extract.split.pattern_splitter_op import PatternSplitter
+from uniflow.op.extract.split.semantic_llm_splitter import SemanticLLMSplitter
 
 
 class SplitterOpsFactory:
@@ -17,6 +19,9 @@ class SplitterOpsFactory:
         MARKDOWN_HEADER_SPLITTER: MarkdownHeaderSplitter(
             name="markdown_header_split_op"
         ),
+        SEMANTIC_LLM_SPLITTER: SemanticLLMSplitter(
+            name="semantic_llm_split_op"
+        )
     }
 
     @staticmethod
